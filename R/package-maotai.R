@@ -4,6 +4,9 @@
 #' This package contains following functions, 
 #' \tabular{ll}{
 #' FUNCTION \tab DESCRIPTION \cr
+#' \code{\link{distgmm}} \tab Distance Measures between Multisets using Gaussian Mixture Models \cr
+#' \code{\link{distecdf}} \tab Distance Measures between Multiple Empirical CDFs \cr
+#' \code{\link{dpmeans}} \tab DP-means Algorithm for Clustering Euclidean Data \cr
 #' \code{\link{lgpa}} \tab Large-scale Generalized Procrustes Analysis \cr
 #' \code{\link{lyapunov}} \tab Solve Lyapunov Equation \cr
 #' \code{\link{matderiv}} \tab Numerical Approximation to Gradient of a Function with Matrix Argument \cr
@@ -17,8 +20,9 @@
 #' @name maotai
 #' @aliases maotai-package
 #' @import Rdpack
-#' @importFrom stats rnorm
+#' @importFrom stats as.dist knots ecdf rnorm runif quantile
 #' @importFrom shapes procGPA
+#' @importFrom mclust Mclust mclustBIC
 #' @importFrom utils packageVersion
 #' @importFrom RSpectra eigs
 #' @importFrom Matrix rankMatrix
