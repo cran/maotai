@@ -25,7 +25,7 @@ induced by Earth Mover's Distance.
 \examples{
 ## two sets of 1d samples, 10 each and add some noise
 #    set 1 : mixture of two gaussians
-#    set 2 : gamma 
+#    set 2 : single gamma distribution
 
 # generate data
 elist = list()
@@ -42,12 +42,13 @@ myk   = 2
 epout = epmeans(elist, k=myk)
 
 # visualize
-opar = par(mfrow=c(1,myk))
+opar = par(mfrow=c(1,myk), no.readonly=TRUE)
 for (k in 1:myk){
   idk = which(epout$cluster==k)
   for (i in 1:length(idk)){
     if (i<2){
-      plot(elist[[idk[i]]], verticals=TRUE, lwd=0.25, do.points=FALSE, main=paste("class",k))
+      pm = paste("class ",k," (size=",length(idk),")",sep="")
+      plot(elist[[idk[i]]], verticals=TRUE, lwd=0.25, do.points=FALSE, main=pm)
     } else {
       plot(elist[[idk[i]]], add=TRUE, verticals=TRUE, lwd=0.25, do.points=FALSE)
     }
@@ -58,5 +59,5 @@ par(opar)
 
 }
 \references{
-\insertRef{henderson_ep-means:_2015}{maotai}
+\insertRef{henderson_epmeans_2015}{maotai}
 }

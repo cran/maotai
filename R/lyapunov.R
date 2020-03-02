@@ -19,15 +19,17 @@
 #' 
 #' #  solve using 'lyapunov' function
 #' solX = lyapunov(A,Q)
+#' \dontrun{
 #' pm1 = "* Experiment with Lyapunov Solver"
 #' pm2 = paste("* Absolute Error  : ",norm(solX-X,"f"),sep="")
 #' pm3 = paste("* Relative Error  : ",norm(solX-X,"f")/norm(X,"f"),sep="")
 #' cat(paste(pm1,"\n",pm2,"\n",pm3,sep=""))
+#' }
 #' 
 #' @references 
-#' \insertRef{sanderson_armadillo:_2016}{maotai}
+#' \insertRef{sanderson_armadillo_2016}{maotai}
 #' 
-#' \insertRef{eddelbuettel_rcpparmadillo:_2014}{maotai}
+#' \insertRef{eddelbuettel_rcpparmadillo_2014}{maotai}
 #' 
 #' @export
 lyapunov <- function(A, Q){
