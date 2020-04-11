@@ -1,5 +1,15 @@
 # News for Package maotai
 
+### changes in version 0.1.5
+  * Following functions are added,
+    - `bmds`     : Bayesian Multidimensional Scaling.
+    - `cmds`     : Classical Multidimensional Scaling.
+    - `kmeanspp` : k-means++ Algorithm for Clustering.
+    - `nem`      : Negative Eigenvalue Magnitude.
+    - `nef`      : Negative Eigenfraction.
+    - `tsne`     : t-Stochastic Neighbor Embedding.
+  * `distgmm` is removed for better composition of the package.
+
 ### changes in version 0.1.4
   * Update `README` for listing the available functions in the package.
   * Corrected an Armadillo type-casting error.
