@@ -13,11 +13,15 @@
 # 06. hidden_nem           : Negative Eigenvalue Magnitude
 # 07. hidden_nef           : Negative Eigenfraction
 # 08. hidden_emds          : Euclified Multidimensional Scaling
+# 09. hidden_hclust        : FASTCLUSTER - hclust function
+# 10. hidden_dbscan        : DBSCAN      - dbscan function
+# 11. hidden_silhouette    : mimics that of cluster's silhouette
 
 
 
 # 00. hidden_checker ------------------------------------------------------
 #' @keywords internal
+#' @noRd
 hidden_checker <- function(xobj){
   if (inherits(xobj, "dist")){
     return(as.matrix(xobj))
@@ -37,12 +41,14 @@ hidden_checker <- function(xobj){
 
 # 01. hidden_kmedoids & hidden_kmedoids_best ------------------------------
 #' @keywords internal
+#' @noRd
 hidden_kmedoids <- function(distobj, nclust=2){
   distobj = stats::as.dist(hidden_checker(distobj))
   myk     = round(nclust)
   return(cluster::pam(distobj, k = myk))
 }
 #' @keywords internal
+#' @noRd
 hidden_kmedoids_best <- function(distobj, mink=2, maxk=10){
   # prepare
   kvec = seq(from=round(mink),to=round(maxk), by = 1)
@@ -72,6 +78,7 @@ hidden_kmedoids_best <- function(distobj, mink=2, maxk=10){
 
 # 02. hidden_bmds ---------------------------------------------------------
 #' @keywords internal
+#' @noRd
 hidden_bmds <- function(x, ndim=2, par.a=5, par.alpha=0.5, par.step=1, mc.iter=8128, verbose=FALSE){
   ######################################################
   # Initialization
@@ -116,6 +123,7 @@ hidden_bmds <- function(x, ndim=2, par.a=5, par.alpha=0.5, par.step=1, mc.iter=8
 
 # 03. hidden_cmds ---------------------------------------------------------
 #' @keywords internal
+#' @noRd
 hidden_cmds <- function(x, ndim=2){
   ##################################################3
   # Check Input and Transform
@@ -149,6 +157,7 @@ hidden_cmds <- function(x, ndim=2){
 
 # 04. hidden_kmeanspp -----------------------------------------------------
 #' @keywords internal
+#' @noRd
 hidden_kmeanspp <- function(x, k=2){
   ##################################################3
   # Check Input and Transform
@@ -200,6 +209,7 @@ hidden_kmeanspp <- function(x, k=2){
 
 # 05. hidden_tsne ---------------------------------------------------------
 #' @keywords internal
+#' @noRd
 hidden_tsne <- function(dx, ndim=2, ...){
   ##################################################
   # Pass to 'Rtsne'
@@ -219,6 +229,7 @@ hidden_tsne <- function(dx, ndim=2, ...){
 
 # 06. hidden_nem ----------------------------------------------------------
 #' @keywords internal
+#' @noRd
 hidden_nem <- function(xdiss){
   ##################################################3
   # Check Input and Transform
@@ -242,6 +253,7 @@ hidden_nem <- function(xdiss){
 
 # 07. hidden_nef ----------------------------------------------------------
 #' @keywords internal
+#' @noRd
 hidden_nef <- function(xdiss){
   ##################################################3
   # Check Input and Transform
@@ -317,6 +329,35 @@ hidden_emds <- function(xdiss, ndim=2, method=c("closure","gram")){
   return(output)
 }
 
+# 09. hidden_hclust -------------------------------------------------------
+#' @keywords internal
+#' @noRd
+hidden_hclust <- function(xdiss, mymethod, mymembers){
+  return(fastcluster::hclust(xdiss, method=mymethod,
+                             members=mymembers))
+}
+
+# 10. hidden_dbscan -------------------------------------------------------
+#' @keywords internal
+#' @noRd
+hidden_dbscan <- function(Xdiss, myeps, myminPts=5, ...){
+  output = dbscan::dbscan(Xdiss, eps = myeps, minPts=myminPts, ...)
+  return(output)
+}
+
+# 11. hidden_silhouette --------------------------------------------------------
+#' @keywords internal
+#' @noRd
+hidden_silhouette <- function(xdiss, label){
+  x    = as.integer(as.factor(label))
+  hsil = cluster::silhouette(x, xdiss)
+  
+  output = list()
+  output$local  = as.vector(hsil[,3])
+  output$global = base::mean(as.vector(hsil[,3]))
+  return(output)
+}
+
 # # example -----------------------------------------------------------------
 # library(labdsv)
 # data(bryceveg) # returns a vegetation data.frame
@@ -331,3 +372,4 @@ hidden_emds <- function(xdiss, ndim=2, method=c("closure","gram")){
 # plot(out.cmds, main="cmds")
 # plot(out.emds1, main="emds::closure")
 # plot(out.emds2, main="emds::gram")
+
