@@ -1,13 +1,13 @@
-d149a05583fe4b59c693de887597faa5 *DESCRIPTION
+0623a8548d9381d3f3fb763ba3d44c0f *DESCRIPTION
 f142f1787fbd58ec16564135c168b659 *LICENSE
-660abf4af9693b5ed7758bd1ac313598 *NAMESPACE
-d39e82965c14ca9da950ca9291d0f9e6 *NEWS.md
+396d5e9c589f67f9a75cec39e77322eb *NAMESPACE
+750864e2d0f963d1f288b68ad61f6c1b *NEWS.md
 7430ce4ebca5cb92f1a75753df1322da *R/RcppExports.R
 51bfb78b30af308931573295bc3498c7 *R/aux_checkers.R
 27d726ee03c804e21875eaad5387508f *R/aux_computation.R
 5eee2ac697e448495d5e73c97af8336d *R/aux_ecdf.R
 8b9bc6533afb9bd796604fc601b926e7 *R/aux_hiddenDAS.R
-fc10325a93c731f3ea5f66414dee05fd *R/aux_hiddenR.R
+06efecdde45113c211b9250849920f0b *R/aux_hiddenR.R
 eb3423edb2f8e2c7c68a191caa4196d7 *R/bmds.R
 f4ccc6e3cd6e44edeaeb7dc044e9dbd1 *R/boot.mblock.R
 c37c6ebf43436e87258d9ec929a4361e *R/boot.stationary.R
@@ -21,7 +21,7 @@ f0ec222883b44112c09e5ecba47f28ef *R/cmds.R
 7b8f309e06853a3703546f2da84a6798 *R/epmeans.R
 5ca02918b848d8d82654cc863923a505 *R/kmeanspp.R
 85a577726c1096b73895a5a090e9a0a2 *R/later_findmed.R
-00c17914e5b1e2b16486bb5699323081 *R/later_install_scipy.R
+65dabf4d39adb27399189e81e826ec17 *R/later_install_scipy.R
 addeab0b35666f835e6da843ba31281e *R/later_matrix1F1.R
 78eeb5fb29b95d8cbe94996406e1cca6 *R/later_matrix2F1.R
 9170ad32f09650ce40fa9beadfca785e *R/later_mbeta.R
@@ -37,7 +37,7 @@ f00182fcdb1cbe15777449982f046573 *R/mmd2test.R
 236a449d527f2f4824087132344a76b2 *R/nef.R
 b47c9df2c3934a39455f77d302a322db *R/nem.R
 218d035618ee31c5daf6ba5130689f66 *R/obsolete_distgmm.R
-cd1dc59a05153acf429605959c8d0600 *R/package-maotai.R
+69344cdc885b4b6a96d7a1cd06bdbf90 *R/package-maotai.R
 b82737ec632f146f42893073add7a750 *R/pdeterminant.R
 edbcb3ddd5271b8374fe41c7646db3cf *R/shortestpath.R
 96101622e14735fd82afcb26a00e138e *R/sylvester.R
@@ -46,7 +46,7 @@ e93a665227b80a5161bfe6271cbcb82b *R/trio.R
 65d2e578e49884d4882fc4a561dd37f8 *R/weiszfeld.R
 f44066288d7185d853a469bb6c24c4f0 *R/zzz.R
 9a5bc663e9648861f6fc7139d9eabf62 *README.md
-749aa7af8370d877a67e44c1ce6f6b99 *build/partial.rdb
+9cb4607e6ff29c5b9035d6f2d509c174 *build/partial.rdb
 ac5f91eaf31bd02c39c27c2571dadb1a *inst/REFERENCES.bib
 8e509cf33257c8230ae3776cc1249a45 *inst/include/maoarma.hpp
 17d403e1938655b6eb327af026e91db3 *inst/include/procedures/maoarma_basic.h
@@ -77,7 +77,7 @@ b6cc5266dcdca322917e361fa2903861 *man/tsne.Rd
 61059660eb073d93e00e8ee054237071 *src/Makevars
 61059660eb073d93e00e8ee054237071 *src/Makevars.win
 fe98065db49ac9f0df5ff94a46ea82fa *src/RcppExports.cpp
-38ba7c75aabfe92d73f674b51fecd9b5 *src/cpp_bmds.cpp
+927e5b5be0b72a5ae1d9c549a6a3891c *src/cpp_bmds.cpp
 9383958de549df8eaf81c37519ad9815 *src/cpp_casket.cpp
 d306f032a33099427a615c852818bf2a *src/cpp_mmds.cpp
 0d286353a8df80d22906beae5d9ecf23 *src/evaluations.cpp
