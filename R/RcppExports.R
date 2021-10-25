@@ -73,6 +73,10 @@ cpp_mmds <- function(D, ndim, maxiter, abstol) {
     .Call('_maotai_cpp_mmds', PACKAGE = 'maotai', D, ndim, maxiter, abstol)
 }
 
+src_smacof <- function(D, W, ndim, maxiter, abstol, use_gutman) {
+    .Call('_maotai_src_smacof', PACKAGE = 'maotai', D, W, ndim, maxiter, abstol, use_gutman)
+}
+
 eval_gaussian <- function(x, mu, cov) {
     .Call('_maotai_eval_gaussian', PACKAGE = 'maotai', x, mu, cov)
 }
@@ -91,5 +95,13 @@ eval_gmm <- function(x, mus, covs, weight) {
 
 src_construct_by_knn <- function(nn_idx, intersection) {
     .Call('_maotai_src_construct_by_knn', PACKAGE = 'maotai', nn_idx, intersection)
+}
+
+src_gaussbary_2002R <- function(array3d, weight, maxiter, abstol) {
+    .Call('_maotai_src_gaussbary_2002R', PACKAGE = 'maotai', array3d, weight, maxiter, abstol)
+}
+
+src_gaussbary_2016A <- function(array3d, weight, maxiter, abstol) {
+    .Call('_maotai_src_gaussbary_2016A', PACKAGE = 'maotai', array3d, weight, maxiter, abstol)
 }
 

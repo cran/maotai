@@ -246,6 +246,22 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// src_smacof
+Rcpp::List src_smacof(arma::mat& D, arma::mat& W, int ndim, int maxiter, double abstol, bool use_gutman);
+RcppExport SEXP _maotai_src_smacof(SEXP DSEXP, SEXP WSEXP, SEXP ndimSEXP, SEXP maxiterSEXP, SEXP abstolSEXP, SEXP use_gutmanSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::mat& >::type D(DSEXP);
+    Rcpp::traits::input_parameter< arma::mat& >::type W(WSEXP);
+    Rcpp::traits::input_parameter< int >::type ndim(ndimSEXP);
+    Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP);
+    Rcpp::traits::input_parameter< double >::type abstol(abstolSEXP);
+    Rcpp::traits::input_parameter< bool >::type use_gutman(use_gutmanSEXP);
+    rcpp_result_gen = Rcpp::wrap(src_smacof(D, W, ndim, maxiter, abstol, use_gutman));
+    return rcpp_result_gen;
+END_RCPP
+}
 // eval_gaussian
 double eval_gaussian(arma::vec x, arma::vec mu, arma::mat cov);
 RcppExport SEXP _maotai_eval_gaussian(SEXP xSEXP, SEXP muSEXP, SEXP covSEXP) {
@@ -312,6 +328,34 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// src_gaussbary_2002R
+Rcpp::List src_gaussbary_2002R(arma::cube& array3d, arma::vec& weight, int maxiter, double abstol);
+RcppExport SEXP _maotai_src_gaussbary_2002R(SEXP array3dSEXP, SEXP weightSEXP, SEXP maxiterSEXP, SEXP abstolSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::cube& >::type array3d(array3dSEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type weight(weightSEXP);
+    Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP);
+    Rcpp::traits::input_parameter< double >::type abstol(abstolSEXP);
+    rcpp_result_gen = Rcpp::wrap(src_gaussbary_2002R(array3d, weight, maxiter, abstol));
+    return rcpp_result_gen;
+END_RCPP
+}
+// src_gaussbary_2016A
+Rcpp::List src_gaussbary_2016A(arma::cube& array3d, arma::vec& weight, int maxiter, double abstol);
+RcppExport SEXP _maotai_src_gaussbary_2016A(SEXP array3dSEXP, SEXP weightSEXP, SEXP maxiterSEXP, SEXP abstolSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< arma::cube& >::type array3d(array3dSEXP);
+    Rcpp::traits::input_parameter< arma::vec& >::type weight(weightSEXP);
+    Rcpp::traits::input_parameter< int >::type maxiter(maxiterSEXP);
+    Rcpp::traits::input_parameter< double >::type abstol(abstolSEXP);
+    rcpp_result_gen = Rcpp::wrap(src_gaussbary_2016A(array3d, weight, maxiter, abstol));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_maotai_compute_SSR", (DL_FUNC) &_maotai_compute_SSR, 2},
@@ -332,11 +376,14 @@ static const R_CallMethodDef CallEntries[] = {
     {"_maotai_cpp_geigen", (DL_FUNC) &_maotai_cpp_geigen, 2},
     {"_maotai_cpp_triangle", (DL_FUNC) &_maotai_cpp_triangle, 1},
     {"_maotai_cpp_mmds", (DL_FUNC) &_maotai_cpp_mmds, 4},
+    {"_maotai_src_smacof", (DL_FUNC) &_maotai_src_smacof, 6},
     {"_maotai_eval_gaussian", (DL_FUNC) &_maotai_eval_gaussian, 3},
     {"_maotai_eval_gaussian_data", (DL_FUNC) &_maotai_eval_gaussian_data, 3},
     {"_maotai_eval_gmm_data", (DL_FUNC) &_maotai_eval_gmm_data, 4},
     {"_maotai_eval_gmm", (DL_FUNC) &_maotai_eval_gmm, 4},
     {"_maotai_src_construct_by_knn", (DL_FUNC) &_maotai_src_construct_by_knn, 2},
+    {"_maotai_src_gaussbary_2002R", (DL_FUNC) &_maotai_src_gaussbary_2002R, 4},
+    {"_maotai_src_gaussbary_2016A", (DL_FUNC) &_maotai_src_gaussbary_2016A, 4},
     {NULL, NULL, 0}
 };
 

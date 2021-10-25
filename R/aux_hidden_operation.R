@@ -1,17 +1,17 @@
-# Hidden Functions for Future Use
+# Hidden Functions : Operations
 # these functions can be loaded using 'utils::getFromNamespace'
 # by the command 'getFromNamespace("function_name","maotai");
 # 
-# 01. hidden_pinv         : pseudo-inverse
-# 02. hidden_vech         : half vectorization including the diagonal.
-#     hidden_ivech          diagonal inclusion is also taken care. 
-# 03. hidden_lab2ind      : create an index list from a label vector
-#     hidden_ind2lab        given an index list, create a label vector
-# 04. hidden_subsetid     : generate split of the subset id
-# 05. hidden_geigen       : do 'geigen' operation; Decreasing order
+# 01. hidden_pinv           : pseudo-inverse
+# 02. hidden_vech           : half vectorization including the diagonal.
+#     hidden_ivech            diagonal inclusion is also taken care. 
+# 03. hidden_lab2ind        : create an index list from a label vector
+#     hidden_ind2lab          given an index list, create a label vector
+# 04. hidden_subsetid       : generate split of the subset id
+# 05. hidden_geigen         : do 'geigen' operation; Decreasing order
 # 06. hidden_knn
-# 07. hidden_knee_clamped : knee-point detection with clamped least squares - return idx
-# 08. hidden_knn_binary   : return a sparse binary matrix for Euclidean data excluding selfl dgCMatrix
+# 07. hidden_knee_clamped   : knee-point detection with clamped least squares - return idx
+# 08. hidden_knn_binary     : return a sparse binary matrix for Euclidean data excluding selfl dgCMatrix
 
 
 # 01. hidden_pinv ---------------------------------------------------------
